@@ -3,8 +3,11 @@ project(PS C)
 
 find_package(SDL2 REQUIRED)
 
-# set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -mwindows -s")
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -s")
+if(MINGW OR WIN32)
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -mconsole -s")
+    
+endif(MINGW OR WIN32)
+
 
 file(GLOB_RECURSE ${PROJECT_NAME}_SRC
     ${CMAKE_CURRENT_SOURCE_DIR}/src/**.c
