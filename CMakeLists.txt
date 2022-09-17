@@ -5,7 +5,6 @@ find_package(SDL2 REQUIRED)
 
 if(MINGW OR WIN32)
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -mconsole -s")
-    
 endif(MINGW OR WIN32)
 
 
@@ -25,6 +24,3 @@ if(MINGW)
 endif(MINGW)
 
 target_link_libraries(${PROJECT_NAME} ${SDL2_LIBRARIES} m)
-
-install(TARGETS ${PROJECT_NAME}
-    DESTINATION ${CMAKE_INSTALL_BINDIR})
