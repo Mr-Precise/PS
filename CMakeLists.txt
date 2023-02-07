@@ -15,6 +15,7 @@ file(GLOB_RECURSE ${PROJECT_NAME}_SRC
 include_directories(${SDL2_INCLUDE_DIRS})
 
 add_executable(${PROJECT_NAME} ${${PROJECT_NAME}_SRC})
+
 target_link_libraries(${PROJECT_NAME} ${SDL2_LIBRARIES})
 if(WIN32)
     target_link_libraries(${PROJECT_NAME} imm32 winmm version setupapi hid)
