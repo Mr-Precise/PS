@@ -1,3 +1,8 @@
+v1.2 Unofficial (2022-2023):
+* refactoring code;
+* separating notes and functions by files;
+* removed unused old makefiles;
+* add support cmake.
 v1.1 (2021):
 * SDL port;
 * export to WAV;

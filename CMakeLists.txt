@@ -9,8 +9,7 @@ endif(MINGW OR WIN32)
 
 
 file(GLOB_RECURSE ${PROJECT_NAME}_SRC
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/**.c
-)
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/**.c)
 
 include_directories(${SDL2_INCLUDE_DIRS})
 
