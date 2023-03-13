@@ -6,7 +6,7 @@ No third party libraries are used except SDL2 to output the audio stream.
 ---
 Added support cmake build system.  
 
-Linux build: 
+Linux - macOS build: 
 ``` 
 mkdir build && cd build
 cmake -G "Unix Makefiles" ..
