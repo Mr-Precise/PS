@@ -4,11 +4,11 @@
 #include <string.h>
 #include <signal.h>
 
-#include "SDL_timer.h"
-#include "SDL_audio.h"
+#define SDL_MAIN_HANDLED
+#include <SDL2/SDL.h>
 
-#include "notes.h"
 #include "ps.h"
+#include "notes.h"
 
 #if defined(_WIN32) || defined(_WIN64)
 #include <windows.h>
@@ -653,7 +653,12 @@ int sound_init()
         slow_reverb[a] = ((rand() & 2047) - 1024) << 6;
 
     if (OutMode == 0) {
-        SDL_Init(0);
+        if (SDL_Init(SDL_INIT_AUDIO) < 0) {
+            fprintf(stderr, "Couldn't initialize SDL: %s\n", SDL_GetError());
+            fprintf(stderr, "Press any key to exit\n");
+            getchar();
+            exit(1);
+        }
 
         SDL_AudioSpec a;
         a.freq = Srate;
