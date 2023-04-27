@@ -4,10 +4,27 @@ One single source file contains synth code, patterns and player.
 No third party libraries are used except SDL2 to output the audio stream.
 
 ---
-Added support cmake build system.  
+Fork info:
+* Added support cross-platform CMake build system.  
+* Refactored Code.
+* Other minor fixes/improvements.
 
-Linux - macOS build: 
-``` 
+### Linux: 
+Dependencies:  
+*ubuntu/debian:
+```
+sudo apt install libsdl2-dev git cmake make
+```
+Arch/Manjaro:  
+```
+pacman -S git cmake sdl2 make
+```
+### macOS:
+```
+brew install git sdl2 cmake
+```
+### Build:
+```
 mkdir build && cd build
 cmake -G "Unix Makefiles" ..
 make
@@ -19,11 +36,19 @@ cmake -G "Unix Makefiles" .. -DCMAKE_TOOLCHAIN_FILE=Your-CrossCompiling-Toolchai
 make
 ```
 
-Windows build:  
+### Windows build (soon):  
+
+[Visual Studio](https://visualstudio.microsoft.com/)  
+[CMake](https://cmake.org/download/)  
+[git](https://github.com/git-for-windows/git/releases/latest)  
+[SDL2](https://www.libsdl.org/)
 ```
 cmake -G "Visual Studio 16 2019" -A x64 -B "build"
+cd build
+cmake --build . --config Release
 ```
-Open .sln in Visual Studio... etc...  
+Or  
+Open generated .sln project file in Visual Studio... select sdl2 libraries... etc...  
 
 ---
 Usage:
